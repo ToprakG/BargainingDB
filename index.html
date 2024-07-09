@@ -19,7 +19,7 @@
         .map-container {
             position: relative;
             height: 500px;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
             margin-bottom: 20px;
             border: 1px solid #ccc;
@@ -65,8 +65,8 @@
         }
 
         const currentMap = getRandomMap();
-        document.getElementById("map-container").style.backgroundImage = `https://toprakg.github.io/HistoricalMaps/images/${currentMap}`;
-        console.log(`https://toprakg.github.io/HistoricalMaps/images/${currentMap}`)
+        document.getElementById("map-container").style.backgroundImage = `url('images/${currentMap}')`;
+        console.log(`${currentMap}`)
 
         function checkGuess() {
             const userInput = document.getElementById("year-input").value.trim();
@@ -85,7 +85,7 @@
                     location.reload()
                 }, 2000);
             } else {
-                resultDiv.textContent = "Incorrect. Try again!";
+                resultDiv.textContent = `"Incorrect. The year was ${currentMap.split('-')[0]}. Try again!"`;
                 resultDiv.style.color = "red";
                 setTimeout(function(){
                     location.reload()
