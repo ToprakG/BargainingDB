@@ -81,9 +81,15 @@
             if (userInput.toLowerCase() === currentMap.split('-')[0].toLowerCase()) {
                 resultDiv.textContent = "Correct! Well done!";
                 resultDiv.style.color = "green";
+                setTimeout(function(){
+                    location.reload()
+                }, 2000);
             } else {
                 resultDiv.textContent = "Incorrect. Try again!";
                 resultDiv.style.color = "red";
+                setTimeout(function(){
+                    location.reload()
+                }, 2000);
             }
         }
     </script>
